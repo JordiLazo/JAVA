@@ -1,3 +1,5 @@
+package Examples;
+
 public class calculadoraJava {
     public static int sum(int a, int b){
         return a + b;
