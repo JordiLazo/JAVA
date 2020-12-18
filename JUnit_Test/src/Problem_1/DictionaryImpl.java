@@ -11,13 +11,19 @@ public class DictionaryImpl implements Dictionary {
     }
 
     @Override
-    public void defineWord(String word, String definition) {
+    public void defineWord(String word, String definition)throws AlreadyDefined{
         if(word.equals("")){
             throw new IllegalArgumentException();
         }
         if (dict.containsKey(word)){
             ArrayList<String> tmp = dict.get(word);
-            tmp.add(definition);
+
+            if (!tmp.contains(definition)){
+                tmp.add(definition);
+            }else {
+                throw new AlreadyDefined("Error, ja existeix una definició");
+            }
+
         }else {
             ArrayList<String> newlistofdefinitions = new ArrayList<>();
             newlistofdefinitions.add(definition);
@@ -36,7 +42,6 @@ public class DictionaryImpl implements Dictionary {
     public void printHashmapKeys(){
         for ( String key : dict.keySet() ) {
             System.out.println(key);
-        };
-
+        }
     }
 }

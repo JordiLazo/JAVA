@@ -1,6 +1,5 @@
 package Problem_2;
 import java.util.*;
-import java.util.stream.IntStream;
 
 
 public class Merger {
@@ -34,5 +33,7 @@ public class Merger {
     public static void main(String[] args) {
         Merger list = new Merger();
         System.out.println(list.mergeSorted(Arrays.asList(0, 6, 7, 8),Arrays.asList(1, 3, 5, 9, 10)));
+        System.out.println(list.mergeSorted(Arrays.asList(0, 11, 16, 19),Arrays.asList(5, 7, 9, 10)));
+        System.out.println(list.mergeSorted(Arrays.asList(20, 11, 16, 19),Arrays.asList(5, 7, 9, 10)));
     }
 }
